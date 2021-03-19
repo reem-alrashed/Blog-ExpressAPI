@@ -1,23 +1,30 @@
 let express = require('express')
 let mongoose = require('mongoose'),
 app = express()
-const router = require('./routes/index')
-const passport = require('passport')
-const User = require('./models/user')
 const expressSession = require('express-session')
 const cookieParser = require('cookie-parser')
-mongoose.Promise = global.Promise
-mongoose.connect('mongodb://localhost:27017/blogs',{
-    useNewUrlParser:true
-})
+const passport = require('passport')
+const router = require('./routes/index')
+const User = require('./models/user')
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost:27017/blogs',
+{ 
+useUnifiedTopology: true,
+ useNewUrlParser: true 
+});
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
 
-app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
-app.use(cookieParser('api'))
+app.use(cookieParser('myblog'))
 app.use(expressSession({
-    secret: 'api',
-    cookie:{ maxAge: 4000000}
+
+     secret: 'myblog',
+     saveUninitialized: true,
+     resave: true,
+     cookie: {maxAge: 6000}
 }))
 
 app.use(passport.initialize())
@@ -27,8 +34,9 @@ passport.use(User.createStrategy())
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
-app.use('/',router)
+
+app.use('/', router);
 
 app.listen(3000,()=>{
-    console.log("express has started!")
+     console.log("express has started!")
 })
