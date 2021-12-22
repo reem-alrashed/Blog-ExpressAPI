@@ -47,6 +47,7 @@ Run this command to run the backend:
 Open the browser and open the website using a localhost with the port 3000,  http://localhost:3000.
 
 
-## Authors 
-@Reem-alrashed and @Ghaidaalbohairy authored the API and this README.md file.
+## Authors   
+
+[@reem-alrashed](https://github.com/reem-alrashed) and [@Ghaidaalbohairy](https://github.com/ghaidaalbohairy) authored the API and this README.md file.
 
