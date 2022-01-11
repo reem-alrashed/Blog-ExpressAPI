@@ -1,8 +1,6 @@
 # ExpressAPI
 
-This is a RESTful API simulation of a blog   
-
-It can be tested using any API development platform such as postman and insomnia.   
+This is a RESTful API simulation of a blog. It can be tested using any API development platform such as postman and insomnia.   
 
 
 The development was done only using Javascript, specifically Node.js and its libraries for the backend mainly Express.js.
@@ -13,12 +11,30 @@ All responses are returned in JSON format. Some API endpoints request a token to
 
 The API allow users to do the following:
 
-1. Create user (Register).
-2. login the system and get a token.
-3. View user by id.
-4. update user information.
-5. delete user.
-6. Get all posts 
+1. Index
+Request:
+```
+http://localhost:3000/
+```
+Response sample:
+```
+{"message":"Welcome to our blog!"}
+```
+2. Create user (Register).
+Request:
+```
+http://localhost:3000/
+```
+Response sample:
+```
+{"message":"Welcome to our blog!"}
+```
+3. login the system and get a token.
+4. View all users (token required)
+5. View user by id.
+6. update user information.
+7. delete user.
+8. Get all posts 
 Request:
 ```
 http://localhost:3000/posts/
@@ -32,8 +48,8 @@ Response sample:
 ]
 }
 ```
-8. Create a post.
-9. view one post by id.
+9. Create a post.
+10. view one post by id.
 Request:
 ```
 http://localhost:3000/posts/5f743c5d30ba1e05944b3ffb
