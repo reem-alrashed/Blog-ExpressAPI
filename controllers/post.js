@@ -38,7 +38,7 @@ module.exports = {
     delete:(req,res)=>{
         let postId = req.params.pid
         Post.findByIdAndRemove(postId)
-        .then(()) =>{
+        .then(() =>{
             res.json({message: "Post is deleted successfully"})
         })
         .catch(error =>{

@@ -10,11 +10,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/blogs',
 { 
 useUnifiedTopology: true,
- useNewUrlParser: true 
 });
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useFindAndModify', false);
-mongoose.set('useCreateIndex', true);
 
 app.use(express.json())
 
