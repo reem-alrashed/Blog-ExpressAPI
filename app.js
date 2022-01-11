@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser')
 const passport = require('passport')
 const router = require('./routes/index')
 const User = require('./models/user')
+const port = 8000;
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/blogs',
 { 
@@ -16,7 +17,6 @@ app.use(express.json())
 
 app.use(cookieParser('myblog'))
 app.use(expressSession({
-
      secret: 'myblog',
      saveUninitialized: true,
      resave: true,
@@ -33,6 +33,6 @@ passport.deserializeUser(User.deserializeUser())
 
 app.use('/', router);
 
-app.listen(3000,()=>{
-     console.log("express has started!")
+app.listen( port,()=>{
+     console.log("express has started running on port", port)
 })
