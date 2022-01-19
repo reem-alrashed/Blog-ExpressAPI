@@ -44,7 +44,12 @@ Response sample:
 ```
 {
 "posts":[
-{"_id":"5f719c7800a6dcee3c9d50d2","title":"Good morning!","text":"Hope you have a nice day.","userId":"5f719c3b00a6dcee3c9d50d1"},{"_id":"5f743c5d30ba1e05944b3ffb","title":"It is a sunny day","text":"Enjoy it","userId":"5f719c3b00a6dcee3c9d50d1","__v":0},{"_id":"5f76f288ca869005ee3645c6","title":"good afternoon","text":"how are you doing?","userId":"5f719c3b00a6dcee3c9d50d1","__v":0}
+{"_id":"5f719c7800a6dcee3c9d50d2","title":"Good morning!","text":"Hope you have a nice day.","userId":"5f719c3b00a6dcee3c9d50d1"},   
+
+{"_id":"5f743c5d30ba1e05944b3ffb","title":"It is a sunny day","text":"Enjoy it","userId":"5f719c3b00a6dcee3c9d50d1","__v":0}, 
+
+
+{"_id":"5f76f288ca869005ee3645c6","title":"good afternoon","text":"how are you doing?","userId":"5f719c3b00a6dcee3c9d50d1","__v":0}
 ]
 }
 ```
