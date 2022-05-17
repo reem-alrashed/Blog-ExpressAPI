@@ -24,6 +24,22 @@ module.exports = {
             res.json({error: error})
         })
     },
+    count:(req,res)=>{
+        User.count()
+        .then(result =>{
+            res.json({
+                message: "Number of users",
+                noOfUsers: result,
+                success: true
+            })
+        })
+        .catch(error =>{
+            res.json({
+                success: false,
+                 error: error
+                })
+        })
+    },
     update:(req,res)=>{
         let userId = req.params.uid
         let userInfo = {
